@@ -24,6 +24,7 @@ app.use(logging);
 // Setup of Routes
 app.use('/users', require('./routes/usersRoute')); 
 app.use('/messages', require('./routes/messagesRoute'));
+app.use('/me', require('./routes/meRoute'));
 
 // Declare Port 3001 as default
 const PORT = process.env.PORT || 3001;
