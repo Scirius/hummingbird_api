@@ -5,6 +5,9 @@ const messagesController = require('../controllers/messagesController');
 // Get all messages
 router.get('/', messagesController.getAllMessages);
 
+// Get all messages incl user details (via LEFT joining users entry)
+router.get('/incluser', messagesController.getAllMessagesInclUser);
+
 // Create New message
 router.get('/', messagesController.createNewMessage);
 

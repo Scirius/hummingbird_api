@@ -12,6 +12,6 @@ router.post('/', usersController.createUser);
 router.get('/:id', usersController.getUserById);
 
 // Retrieve all the messages for a specific user
-router.get('/', usersController.getMessagesByUserId);
+router.get('/:id/messages', usersController.getMessagesByUserId);
 
 module.exports = router;

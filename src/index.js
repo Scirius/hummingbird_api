@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-//app.use(logging);
+app.use(logging);
 
 // Setup of Routes
 app.use('/users', require('./routes/usersRoute')); 

@@ -43,7 +43,7 @@ const logging = (req, res, next) => {
       durationInMilliseconds.toLocaleString() + "ms"
     )}`;
     console.log(logChalked);
-    fs.appendFile("logs.txt", log + "\n", err => {
+    fs.appendFile("logs.log", log + "\n", err => {
         if (err) {
             console.log(err);
         }
