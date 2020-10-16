@@ -2,11 +2,8 @@ const express = require("express");
 const router = express.Router();
 const messagesController = require('../controllers/messagesController');
 
-// Get all messages
+// Get all messages (incl. userdata as well)
 router.get('/', messagesController.getAllMessages);
-
-// Get all messages incl user details (via LEFT joining users entry)
-router.get('/incluser', messagesController.getAllMessagesInclUser);
 
 // Create New message
 router.get('/', messagesController.createNewMessage);

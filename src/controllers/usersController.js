@@ -24,7 +24,16 @@ const UsersController = {
         } 
     },
     getMessagesByUserId: (req, res, next) => {
-        res.send("not implemented yet");
+        const { id } = req.params;
+        const sanitized_id=parseInt(id);
+        if (isNaN(sanitized_id)){
+        res.status(400).send("Bad Request - malformed user id.");
+        }else{
+            dbConnection
+                .query(`SELECT * FROM messages WHERE id_user=`+sanitized_id)
+                .then((data) => res.json(data.rows))
+                .catch((e) => console.log(e));
+        } 
     }
 };
 
