@@ -5,5 +5,5 @@
 * We used [elephantSQL - PostgreSQL as a Service](https://www.elephantsql.com/) as our demo backend
 
 # Cheers
-Team Frontend: Cristiani, Elessia, Raphael, Teresa (with friendly support by Ben-WBS)
-Team API/Backend: J (with friendly support by Aria-WBS)
+* Team Frontend: Cristiani, Elessia, Raphael, Teresa (with friendly support by Ben-WBS)
+* Team API/Backend: J (with friendly support by Aria-WBS)
