@@ -15,7 +15,19 @@ const MessagesController = {
         res.send("not implemented yet");
     },
     getMessageById: (req, res, next) => {
-        res.send("not implemented yet");
+        const { id } = req.params;
+        const sanitized_id=parseInt(id);
+        if (isNaN(sanitized_id)){
+        res.status(400).send("Bad Request - malformed user id.");
+        }else{
+            dbConnection
+                .query(`SELECT * FROM messages m
+                LEFT JOIN users u
+                ON m.id_user=u.id
+                WHERE m.id=`+sanitized_id)
+                .then((data) => res.json(data.rows))
+                .catch((e) => console.log(e));
+        } 
     }
 };
 
