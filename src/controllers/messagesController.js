@@ -21,7 +21,7 @@ const MessagesController = {
         res.status(400).send("Bad Request - malformed user id.");
         }else{
             dbConnection
-                .query(`SELECT * FROM messages m
+                .query(`SELECT m.id, m.text, m.date, m.id_user, u.name, u.image_url FROM messages m
                 LEFT JOIN users u
                 ON m.id_user=u.id
                 WHERE m.id=`+sanitized_id)
